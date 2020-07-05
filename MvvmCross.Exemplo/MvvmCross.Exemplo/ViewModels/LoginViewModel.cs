@@ -8,27 +8,19 @@ namespace MvvmCross.Exemplo.ViewModels
 {
     public class LoginViewModel : MvxViewModel
     {
-        private string _nome;
-        public string Nome
+        private string _titulo;
+        public string Titulo
         {
-            get { return _nome; }
+            get { return _titulo; }
             set
             {
-                _nome = value;
+                _titulo = value;
                 RaisePropertyChanged();
             }
         }
 
-        private string _senha;
-        public string Senha
-        {
-            get { return _senha; }
-            set
-            {
-                _senha = value;
-                RaisePropertyChanged();
-            }
-        }
+        public string Usuario { get; set; }
+        public string Senha { get; set; }
 
         private readonly IMvxNavigationService _navigationService;
 
@@ -37,11 +29,17 @@ namespace MvvmCross.Exemplo.ViewModels
         {
             get
             {
-                return _entrarCommand ?? new Command(() =>
+                return _entrarCommand ?? (_entrarCommand = new Command(() =>
                 {
-                    _navigationService.Navigate<CadastroViewModel>();
-                });
+                    _navigationService.Navigate<Main2ViewModel>();
+                }));
             }
+        }
+
+        public LoginViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+            Titulo = "Login";
         }
 
         public override Task Initialize()

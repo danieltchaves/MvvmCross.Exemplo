@@ -2,7 +2,7 @@
 
 namespace MvvmCross.Exemplo.ViewModels
 {
-    public class CadastroViewModel : MvxViewModel
+    public class Main2ViewModel : MvxViewModel
     {
     }
 }

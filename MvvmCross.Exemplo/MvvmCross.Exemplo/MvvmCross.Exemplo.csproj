@@ -24,8 +24,8 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\CadastroPage.xaml.cs">
-      <DependentUpon>CadastroPage.xaml</DependentUpon>
+    <Compile Update="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -33,7 +33,7 @@
     <EmbeddedResource Update="View\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\CadastroPage.xaml">
+    <EmbeddedResource Update="View\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

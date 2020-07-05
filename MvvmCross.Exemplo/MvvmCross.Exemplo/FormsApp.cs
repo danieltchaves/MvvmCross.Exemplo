@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Exemplo.ViewModels;
 using MvvmCross.IoC;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace MvvmCross.Exemplo
@@ -8,13 +9,9 @@ namespace MvvmCross.Exemplo
     {
         public override void Initialize()
         {
-            CreatableTypes()
-                .EndingWith("Service")
-                .AsInterfaces()
-                .RegisterAsLazySingleton();
-
-            RegisterAppStart<ViewModels.LoginViewModel>();
-            Mvx.IoCProvider.RegisterType<CadastroViewModel>();
+            Mvx.IoCProvider.RegisterType<LoginViewModel>();
+            Mvx.IoCProvider.RegisterType<Main2ViewModel>();
+            RegisterAppStart<LoginViewModel>();
         }
     }
 }

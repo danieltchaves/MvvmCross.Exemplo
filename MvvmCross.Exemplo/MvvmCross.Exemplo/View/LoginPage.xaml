@@ -7,14 +7,26 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MvvmCross.Exemplo.View.LoginPage">
+             x:Class="MvvmCross.Exemplo.View.LoginPage"
+             Title="{Binding Titulo, Mode=OneWay}">
     <view:MvxContentPage.Content>
-        <StackLayout BackgroundColor="Red">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout 
+            Padding="20" 
+            VerticalOptions="CenterAndExpand">
 
-            <Button Text="Entrar" Command="{Binding EntrarCommand}"/>
+            <Image Source="icon.png"/>
+
+            <Entry 
+                Text="{Binding Usuario, Mode=OneWayToSource}" 
+                Placeholder="Login"/>
+            <Entry 
+                Text="{Binding Senha, Mode=OneWayToSource}" 
+                Placeholder="Senha"/>
+
+            <Button 
+                Text="Entrar" 
+                Command="{Binding EntrarCommand}"/>
+
         </StackLayout>
     </view:MvxContentPage.Content>
 </view:MvxContentPage>
