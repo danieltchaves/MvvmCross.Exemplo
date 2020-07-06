@@ -18,11 +18,8 @@ namespace MvvmCross.Exemplo.ViewModels
                 RaisePropertyChanged();
             }
         }
-
         public string Usuario { get; set; }
         public string Senha { get; set; }
-
-        private readonly IMvxNavigationService _navigationService;
 
         private ICommand _entrarCommand;
         public ICommand EntrarCommand
@@ -36,6 +33,8 @@ namespace MvvmCross.Exemplo.ViewModels
             }
         }
 
+        private readonly IMvxNavigationService _navigationService;
+
         public LoginViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -45,6 +44,26 @@ namespace MvvmCross.Exemplo.ViewModels
         public override Task Initialize()
         {
             return base.Initialize();
+        }
+
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+        }
+
+        public override void ViewDisappearing()
+        {
+            base.ViewDisappearing();
+        }
+
+        public override void ViewDisappeared()
+        {
+            base.ViewDisappeared();
         }
     }
 }
